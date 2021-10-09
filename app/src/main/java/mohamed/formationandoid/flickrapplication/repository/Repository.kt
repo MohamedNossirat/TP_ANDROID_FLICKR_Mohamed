@@ -16,7 +16,7 @@ class Repository {
                 .build()
         val service = retrofit.create(FlickrAPI::class.java)
         service.getInterestingPhotos(
-            "Listflickr.interestingness.getList",
+            "flickr.interestingness.getList",
             "34b3c6c1b435ac9b6b4206e3ca8bc32d",
             "20"
         ).enqueue(callback)

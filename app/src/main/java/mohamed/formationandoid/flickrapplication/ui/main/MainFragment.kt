@@ -3,6 +3,7 @@ package mohamed.formationandoid.flickrapplication.ui.main
 import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +24,6 @@ class MainFragment : Fragment() {
 
     private lateinit var viewModel: MainViewModel
 
-    @SuppressLint("FragmentLiveDataObserve")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,21 +40,15 @@ class MainFragment : Fragment() {
              Photo ->
                 baseUrl = "https://live.staticflickr.com/" + Photo.server + "/" + Photo.id + "_" + Photo.secret + ".jpg"
             title.text = Photo.title
+            Log.v("Mohamed","URL"+baseUrl)
 
             Glide.with(layout).load(baseUrl).into(image)
         }
-        viewModel.photos.observe(this,photo_observee)
+        viewModel.photo.observe(requireActivity(),photo_observee)
         button_next.setOnClickListener(){
             viewModel.next()
         }
 
         return layout
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }

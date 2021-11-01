@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import mohamed.formationandoid.flickrapplication.R
 import mohamed.formationandoid.flickrapplication.model.Photo
@@ -45,8 +46,13 @@ class MainFragment : Fragment() {
             Glide.with(layout).load(baseUrl).into(image)
         }
         viewModel.photo.observe(requireActivity(),photo_observee)
+
         button_next.setOnClickListener(){
             viewModel.next()
+        }
+
+        button_all.setOnClickListener(){
+            Navigation.findNavController(layout).navigate(R.id.versListeFragment);
         }
 
         return layout

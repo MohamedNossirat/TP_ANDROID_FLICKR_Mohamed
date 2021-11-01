@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="mohamed.formationandoid.flickrapplication.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/versListeFragment"
+            app:destination="@id/all_images" />
+    </fragment>
+    <fragment
+        android:id="@+id/all_images"
+        android:name="mohamed.formationandoid.flickrapplication.ui.main.list.all_images"
+        android:label="all_images_fragment"
+        tools:layout="@layout/all_images_fragment" />
+</navigation>

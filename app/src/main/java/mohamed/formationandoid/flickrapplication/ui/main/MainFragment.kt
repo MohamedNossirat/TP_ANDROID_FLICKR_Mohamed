@@ -1,6 +1,5 @@
 package mohamed.formationandoid.flickrapplication.ui.main
 
-import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -33,7 +32,7 @@ class MainFragment : Fragment() {
         var baseUrl : String = ""
         val layout = inflater.inflate(R.layout.main_fragment, container, false)
         val title = layout.findViewById<TextView>(R.id.photoText)
-        val image = layout.findViewById<ImageView>(R.id.photoLoaded)
+        val image = layout.findViewById<ImageView>(R.id.FullImage)
         val button_all = layout.findViewById<Button>(R.id.allPhotos)
         val button_next = layout.findViewById<Button>(R.id.nextButton)
 

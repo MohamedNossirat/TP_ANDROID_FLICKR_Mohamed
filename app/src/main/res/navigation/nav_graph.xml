@@ -18,5 +18,18 @@
         android:id="@+id/all_images"
         android:name="mohamed.formationandoid.flickrapplication.ui.main.list.all_images"
         android:label="all_images_fragment"
-        tools:layout="@layout/all_images_fragment" />
+        tools:layout="@layout/all_images_fragment" >
+        <action
+            android:id="@+id/versFullImageFragment"
+            app:destination="@id/fullImageFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullImageFragment2"
+        android:name="mohamed.formationandoid.flickrapplication.ui.main.full.fullImageFragment"
+        android:label="full_image_fragment"
+        tools:layout="@layout/full_image_fragment" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.GridLayout
 import android.widget.ImageView
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import mohamed.formationandoid.flickrapplication.R
 import mohamed.formationandoid.flickrapplication.model.Photo
+import mohamed.formationandoid.flickrapplication.ui.main.MainFragmentDirections
 
 
 class Adapter(val photos : List<Photo>) :
@@ -33,6 +36,13 @@ class Adapter(val photos : List<Photo>) :
         Log.v("Mohamed","URL"+baseUrl)
 
         val myGrid = holder.v.findViewById<ImageView>(R.id.MyPhotoGrid)
+
+
+        myGrid.setOnClickListener(){
+            val action = all_imagesDirections.versFullImageFragment(baseUrl)
+            Navigation.findNavController(holder.v).navigate(action)
+
+        }
         Glide.with(holder.v).load(baseUrl).into(myGrid)
 
     }

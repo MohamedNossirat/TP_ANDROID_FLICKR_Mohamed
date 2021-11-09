@@ -15,7 +15,7 @@ class AllImagesViewModel : ViewModel() {
 
     val repository = Repository()
 
-    val photo= MutableLiveData<List<Photo>>()
+    val photo = MutableLiveData<List<Photo>>()
     var photosListe = listOf<Photo>()
 
     init {
